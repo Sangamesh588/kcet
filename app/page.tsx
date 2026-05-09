@@ -1,15 +1,5 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-6xl font-bold">
-          KCET Predictor
-        </h1>
+import { redirect } from "next/navigation";
 
-        <p className="mt-4 text-zinc-400 text-lg">
-          Predict colleges based on your KCET rank
-        </p>
-      </div>
-    </main>
-  )
+export default function Home() {
+  redirect("/predictor");
 }
