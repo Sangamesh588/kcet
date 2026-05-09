@@ -1,4 +1,5 @@
 "use client";
+
 import jsPDF from "jspdf";
 import SplashScreen from "@/components/SplashScreen";
 import autoTable from "jspdf-autotable";
