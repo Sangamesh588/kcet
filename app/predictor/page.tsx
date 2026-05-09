@@ -1,7 +1,7 @@
 "use client";
 
 import jsPDF from "jspdf";
-import SplashScreen from "@/components/SplashScreen";
+
 import autoTable from "jspdf-autotable";
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/lib/supabase";
@@ -472,14 +472,7 @@ export default function PredictorPage() {
   const [results, setResults] = useState<CollegeResult[]>([]);
   const [loading, setLoading] = useState(false);
   // ─────────────────────────────────────────────────────────────────────
-  const [showSplash, setShowSplash] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2500);
-
-    return () => clearTimeout(timer);
-  }, []);
+ 
   const [hasSearched, setHasSearched] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [rankFocused, setRankFocused] = useState(false);
@@ -559,8 +552,7 @@ export default function PredictorPage() {
   };
 
   return (
-  <>
-    <SplashScreen show={showSplash} />
+  
 
     <main className="relative min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden font-sans">
       {/* Subtle dot grid background */}
@@ -865,6 +857,5 @@ export default function PredictorPage() {
         ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
       `}</style>
     </main>
-    </>
   );
 }
